@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import random
 import math
 import decimal
@@ -25,7 +25,7 @@ def make_point():
         y = round(random.random()*2-1,2)
         
         point = (x,y)
-        distance = distance(point);
+        distance = circle(point);
 
     return point
 
