@@ -3,11 +3,31 @@ import random
 import math
 import decimal
 
-def make_point():
-    x = round(random.random()*2-1,2)
-    y = round(random.random()*2-1,2)
+def distance(a):
+    first = a[0]
+    firstX = first[0]
+    firstY = first[1]
 
-    point = (x,y)
+    second = a[1]
+    secondX = second[0]
+    secondY = second[1]
+
+    distance = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
+
+    return distance
+
+
+def make_point():
+    distance = 2
+    while distance > 1:
+        x = round(random.random()*2-1,2)
+        y = round(random.random()*2-1,2)
+        
+        point = (x,y)
+
+        distance = distance(point);
+
+    
     return point
 
 
@@ -18,35 +38,10 @@ def make_list_points():
     return a
 
 
-def find_closest(a):
-
-    firstP = 0
-    secondP = 0
-    closest = 999
-    for i in range(len(a)-1):
-        for j in range(i+1,len(a)):
-            first = a[i]
-            firstX = first[0]
-            firstY = first[1]
-
-            second = a[j]
-            secondX = second[0]
-            secondY = second[1]
-
-            check = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
-
-            if check < closest:
-                closest = check
-                print("distance",closest)
-                firstP = first
-                secondP = second
-                print(firstP,secondP)
-    return firstP, secondP
-
 
 a = make_list_points()
 print(a)
-print("closest pair: ",find_closest(a))
+
 
 # -- OUTPUT
 #[(-0.31, -0.44), (0.32, 0.92), (0.97, -0.14), (-0.95, -0.71), (-0.72, -0.45), (-0.83, 0.51), (-0.06, 0.51), (-0.62, 0.58), (0.75, -0.27), (-0.88, 0.71)]
