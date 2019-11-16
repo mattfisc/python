@@ -17,7 +17,7 @@ def circle(a):
 
     return distance
 
-
+# make tuple point
 def make_point():
     distance = 2
     while distance > 1:
@@ -25,13 +25,11 @@ def make_point():
         y = round(random.random()*2-1,2)
         
         point = (x,y)
-
         distance = distance(point);
 
-    
     return point
 
-
+# make list of tuple points
 def make_list_points():
     a = []
     for i in range(1000):
