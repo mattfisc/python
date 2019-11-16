@@ -3,14 +3,15 @@ import random
 import math
 import decimal
 
-def distance(a):
-    first = a[0]
-    firstX = first[0]
-    firstY = first[1]
+# circle
+def circle(a):
 
-    second = a[1]
-    secondX = second[0]
-    secondY = second[1]
+    firstX = a[0]
+    firstY = a[1]
+
+    # radius center point
+    secondX = 0
+    secondY = 0
 
     distance = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
 
