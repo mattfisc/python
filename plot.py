@@ -39,6 +39,7 @@ def make_list_points():
         a.append(make_point())
     return a
 
+
 a = make_list_points()
 print(a)
 
