@@ -4,14 +4,14 @@ import math
 import decimal
 
 def distance(a):
-    first = a[0]
-    firstX = first[0]
-    firstY = first[1]
+    #point
+    firstX = a[0]
+    firstY = a[1]
+    #center of cirle
+    secondX = 0
+    secondY = 0
 
-    second = a[1]
-    secondX = second[0]
-    secondY = second[1]
-
+    #distance formula
     distance = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
 
     return distance
@@ -26,7 +26,8 @@ def make_point():
         y = round(random.random()*2-1,2)
         
         point = (x,y)
-
+        #check distance from center of circle
+        # center is 0,0
         distance = distance(point);
 
     
