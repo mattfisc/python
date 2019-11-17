@@ -1,15 +1,17 @@
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import random
 import math
 import decimal
 
-def distance(a):
+# distance check from center
+def distance(a,r):
     #point
     firstX = a[0]
     firstY = a[1]
-    #center of cirle
-    secondX = 0
-    secondY = 0
+
+    #center point
+    secondX = r[0]
+    secondY = r[1]
 
     #distance formula
     distance = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
@@ -20,20 +22,14 @@ def distance(a):
 def make_point():
     distance = 2
 
-    #find point in circle radius
+    # make tuple of(x,y)
     while distance > 1:
         # tuples of -1 to 1
-        # x,y
         x = round(random.random()*2-1,2)
         y = round(random.random()*2-1,2)
         
         point = (x,y)
-        
-        #check distance from center of circle
-        # center is 0,0
-        distance = distance(point);
 
-    
     return point
 
 
@@ -42,8 +38,6 @@ def make_list_points():
     for i in range(10):
         a.append(make_point())
     return a
-
-
 
 a = make_list_points()
 print(a)
