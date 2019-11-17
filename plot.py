@@ -22,10 +22,13 @@ def make_point():
 
     #find point in circle radius
     while distance > 1:
+        # tuples of -1 to 1
+        # x,y
         x = round(random.random()*2-1,2)
         y = round(random.random()*2-1,2)
         
         point = (x,y)
+        
         #check distance from center of circle
         # center is 0,0
         distance = distance(point);
