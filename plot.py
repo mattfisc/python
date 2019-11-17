@@ -3,7 +3,7 @@ import random
 import math
 import decimal
 
-def distance(a):
+def circle(a):
     first = a[0]
     firstX = first[0]
     firstY = first[1]
@@ -25,7 +25,7 @@ def make_point():
         
         point = (x,y)
 
-        distance = distance(point);
+        distance = circle(point);
 
     
     return point
