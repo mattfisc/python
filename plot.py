@@ -3,7 +3,7 @@ import random
 import math
 import decimal
 
-def circle(a):
+def distance(a):
     first = a[0]
     firstX = first[0]
     firstY = first[1]
@@ -19,13 +19,15 @@ def circle(a):
 
 def make_point():
     distance = 2
+
+    #find point in circle radius
     while distance > 1:
         x = round(random.random()*2-1,2)
         y = round(random.random()*2-1,2)
         
         point = (x,y)
 
-        distance = circle(point);
+        distance = distance(point);
 
     
     return point
