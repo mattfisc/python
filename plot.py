@@ -1,7 +1,8 @@
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import random
 import math
 import decimal
+import operator
 
 # distance check from center
 def distance(a,r):
