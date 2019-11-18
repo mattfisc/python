@@ -20,25 +20,24 @@ def distance(a,r):
 
 
 def make_point():
-    distance = 2
-
+    
     # make tuple of(x,y)
-    while distance > 1:
+   
         # tuples of -1 to 1
-        x = round(random.random()*2-1,2)
-        y = round(random.random()*2-1,2)
-        
-        point = (x,y)
+    x = round(random.random()*2-1,2)
+    y = round(random.random()*2-1,2)
+    
+    point = (x,y)
 
     return point
 
 
 def make_list_points():
     a = []
-    for i in range(10):
+    for i in range(1000):
         a.append(make_point())
-    return a
 
+    return a
 
 a = make_list_points()
 print(a)
