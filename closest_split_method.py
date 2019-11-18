@@ -37,16 +37,27 @@ def make_list_points():
 
 
 # find closest from delta
-def split_pair(x,y):
+def split_pair(a):
+    a.sort()
 
-    #create 50 points
-    
+    firstX=a[:len(a)//2]
+    secondX=a[len(a)//2:]
+
     delta = 1.1
+
+
     
 
 
 
 a = make_list_points()
+
+split_pair(a)
+
+
+
+
+
 print("Non sorted list: \n",a)
 
 # sort x axis
