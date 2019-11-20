@@ -37,7 +37,7 @@ def make_list_points():
 
 
 # find closest from delta
-def split_pair(a):
+def split_pair(a,middle):
     a.sort()
 
     firstX=a[:len(a)//2]
@@ -45,14 +45,14 @@ def split_pair(a):
 
     delta = 1.1
 
-
+    
     
 
 
 
 a = make_list_points()
-
-split_pair(a)
+middle = 10/2
+split_pair(a,middle)
 
 
 
