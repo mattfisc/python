@@ -1,7 +1,9 @@
 import random
 import math
 import matplotlib.pyplot as plt
+import operator
 
+#%%
 def circle():
     x = []
     y = []
@@ -14,3 +16,6 @@ def circle():
     plt.show()
 
 circle()
+
+
+# %%
