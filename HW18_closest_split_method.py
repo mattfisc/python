@@ -29,7 +29,7 @@ def make_point():
 
 def make_list_points():
     a = []
-    for i in range(50):
+    for i in range(20):
         a.append(make_point())
 
     return a
@@ -37,26 +37,58 @@ def make_list_points():
 
 
 # find closest from delta
-def split_pair(a,middle):
+def split_pair(a):
     a.sort()
-
-    firstX=a[:len(a)//2]
-    secondX=a[len(a)//2:]
+    middle = 0
+    for i in range(len(a)):
+        if a[i][0] < 0:
+            middle = i
+        else:
+            break
+    firstX=a[:middle]
+    secondX=a[middle:]
 
     delta = 1.1
 
+    #left of delta
+    leftD =[]
+    i = len(firstX)
+    #reversed loop
+    while(True):
+        if a[i][0] > -delta:
+            leftD.append(a[i])
+            i-=1
+        else:
+            break
+    
+    #right of delta
+    rightD = []
+    i = len(secondX)
+    while(True):
+        if a[i][0] < delta:
+            rightD.append(a[i])
+            i+=1
+        else:
+            break
+
+    #sort deltas by y cordinate
+    sortY(leftD)
+    sortY(rightD)
+
+    print("left d: ",leftD)
+    print("right d:",rightD)
+
+
+    
+    
     
     
 
 
 
 a = make_list_points()
-middle = 10/2
-split_pair(a,middle)
-
-
-
-
+middle = 0
+split_pair(a)
 
 print("Non sorted list: \n",a)
 
@@ -66,5 +98,5 @@ print("x axis sort:\n",a)
 
 sortY(a)
 print("y axis sort:\n",a)
-
+print(a[0][0])
 
