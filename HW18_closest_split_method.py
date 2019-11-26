@@ -82,13 +82,6 @@ def split_pair(a):
     print("right d:",rightD)
 
 
-    
-    
-    
-    
-
-
-
 a = make_list_points()
 middle = 0
 split_pair(a)
