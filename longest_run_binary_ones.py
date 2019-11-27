@@ -1,9 +1,10 @@
 def binary(num):
-    binary = ""
+    string = ""
     while(num > 0):
-        binary = num%2 + binary
+        string = num%2 + string
         num = num / 2
     
     return binary
 
-print(binary(4))
+number = 5
+print(binary(number))
