@@ -1,7 +1,7 @@
 def binary(num):
-    string = ""
+    s = ""
     while(num > 0):
-        string = num%2 + string
+        s =  num%2 
         num = num / 2
     
     return binary
