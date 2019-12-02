@@ -3,6 +3,9 @@
 # array, and places all smaller (smaller than pivot) 
 # to left of pivot and all greater elements to right 
 # of pivot 
+
+import random
+
 def partition(lst, a ,b):
     random_index = random.randint(a,b)  # pick random index, its value will be our 							# pivot val
     lst[b], lst[random_index] = lst[random_index], lst[b]   # swap the value with 										# lst[b]
