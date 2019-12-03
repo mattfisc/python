@@ -64,6 +64,7 @@ def closest_point(a):
     return firstX,secondX
     
 def closestPair(lx,ly,rx,ry):
+    if lx < 3 and 
 
 
 
