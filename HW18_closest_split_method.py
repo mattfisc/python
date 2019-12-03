@@ -37,8 +37,8 @@ def make_list_points():
 
 
 # find closest from delta
-def split_pair(a):
-
+def closestL_R(a):
+    # sort x
     a.sort()
 
     middleI = 0
@@ -51,6 +51,12 @@ def split_pair(a):
     firstX=a[:middleI]
     secondX=a[middleI:]
 
+    # closest left
+    closestD = 
+    # closest right
+
+def closest_cross(firstX, secondX):
+    
     delta = 1.1
 
     #left of delta
@@ -81,10 +87,33 @@ def split_pair(a):
     print("left d: ",leftD)
     print("right d:",rightD)
 
+def find_closest(a):
+
+    firstP = 0
+    secondP = 0
+    closest = 999
+    for i in range(len(a)-1):
+        for j in range(i+1,len(a)):
+            first = a[i]
+            firstX = first[0]
+            firstY = first[1]
+
+            second = a[j]
+            secondX = second[0]
+            secondY = second[1]
+
+            check = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
+
+            if check < closest:
+                closest = check
+                print("distance",closest)
+                firstP = first
+                secondP = second
+                print(firstP,secondP)
+    return closest
 
 a = make_list_points()
-middle = 0
-split_pair(a)
+closest = closestL_R(a)
 
 print("Non sorted list: \n",a)
 
