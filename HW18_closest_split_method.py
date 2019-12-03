@@ -42,16 +42,23 @@ def make_list_points():
 def closest_point(a):
     # sort x
     a.sort()
+    #print("sorted x\n", a)
 
+
+    # find middle
+    # right side keeps on the line
     middleI = 0
     for i in range(len(a)):
         if a[i][0] < 0:
+            print(a[i][0])
             middleI = i
         else:
             break
 
     firstX=a[:middleI]
+    print("\nleft side\n",firstX)
     secondX=a[middleI:]
+    print("\nright side\n",secondX)
 
     # closest left
     closeL = bruteForce(firstX)
@@ -69,6 +76,7 @@ def closest_point(a):
     # closest cross
     return closest_cross(firstX,secondX,d)
 
+# cross closest
 def closest_cross(firstX,secondX,delta):
     
     #left of delta
@@ -117,13 +125,13 @@ def bruteForce(a):
             secondY = second[1]
 
             check = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
-
+            #print(check)
             if check < closest:
                 closest = check
-                print("distance",closest)
+                #print("distance",closest)
                 firstP = first
                 secondP = second
-                print(firstP,secondP)
+            #print(closest) 
     return closest
 
 a = make_list_points()
@@ -131,11 +139,11 @@ a = make_list_points()
 closest = closest_point(a)
 
 
-print("Non sorted list: \n",a)
+#print("Non sorted list: \n",a)
 
 # sort x axis
-a.sort()
-print("x axis sort:\n",a)
+#a.sort()
+##print("x axis sort:\n",a)
 
-sortY(a)
-print("y axis sort:\n",a)
+#sortY(a)
+#print("y axis sort:\n",a)
