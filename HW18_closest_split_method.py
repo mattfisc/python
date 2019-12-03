@@ -118,7 +118,9 @@ def bruteForce(a):
 
     firstP = 0
     secondP = 0
-    closest = 999
+
+    # nothing is over 11 in size
+    closest = 20
     for i in range(len(a)-1):
         for j in range(i+1,len(a)):
             first = a[i]
