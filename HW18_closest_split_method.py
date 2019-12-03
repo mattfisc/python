@@ -1,6 +1,8 @@
 import math
 import random
 from operator import itemgetter
+
+
 def sortY(tup):  
       
     # getting length of list of tuples 
@@ -19,8 +21,8 @@ def make_point():
     # make tuple of(x,y)
    
         # tuples of -10 to 10
-    x = round(random.randrange(-10,10),2)
-    y = round(random.randrange(-10,10),2)
+    x = round(random.uniform(-10,10),2)
+    y = round(random.uniform(-10,10),2)
     
     point = (x,y)
 
@@ -71,7 +73,9 @@ def closest_cross(firstX,secondX,delta):
     
     #left of delta
     leftD =[]
+
     i = len(firstX)
+
     #reversed loop
     while(True):
         if a[i][0] > -delta:
@@ -123,7 +127,9 @@ def bruteForce(a):
     return closest
 
 a = make_list_points()
-closest = closestL_R(a)
+
+closest = closest_point(a)
+
 
 print("Non sorted list: \n",a)
 
@@ -133,4 +139,3 @@ print("x axis sort:\n",a)
 
 sortY(a)
 print("y axis sort:\n",a)
-
