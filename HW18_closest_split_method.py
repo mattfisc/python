@@ -37,7 +37,7 @@ def make_list_points():
 
 
 # find closest from delta
-def closestL_R(a):
+def closest_point(a):
     # sort x
     a.sort()
 
@@ -52,13 +52,23 @@ def closestL_R(a):
     secondX=a[middleI:]
 
     # closest left
-    closestD = 
+    closeL = bruteForce(firstX)
     # closest right
-
-def closest_cross(firstX, secondX):
+    closeR = bruteForce(secondX)
     
-    delta = 1.1
+    # closest distance by d
+    d = 0
 
+    if closeL < closeR:
+        d = closeL
+    else:
+        d = closeR
+
+    # closest cross
+    return closest_cross(firstX,secondX,d)
+
+def closest_cross(firstX,secondX,delta):
+    
     #left of delta
     leftD =[]
     i = len(firstX)
@@ -87,7 +97,7 @@ def closest_cross(firstX, secondX):
     print("left d: ",leftD)
     print("right d:",rightD)
 
-def find_closest(a):
+def bruteForce(a):
 
     firstP = 0
     secondP = 0
