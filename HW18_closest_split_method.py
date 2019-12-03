@@ -106,8 +106,13 @@ def closest_cross(firstX,secondX,delta):
     sortY(leftD)
     sortY(rightD)
 
-    print("left d: ",leftD)
-    print("right d:",rightD)
+    #print("left d: ",leftD)
+    #print("right d:",rightD)
+
+    # find closest cross
+    #
+    #
+    #
 
 def bruteForce(a):
 
