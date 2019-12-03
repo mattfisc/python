@@ -31,7 +31,9 @@ def make_point():
 
 def make_list_points():
     a = []
-    for i in range(50):
+
+    # list of 64 random points
+    for i in range(64):
         a.append(make_point())
 
     return a
@@ -59,87 +61,11 @@ def closest_point(a):
     print("\nleft side\n",firstX)
     secondX=a[middleI+1:]
     print("\nright side\n",secondX)
-
-    # closest left
-    closeL = bruteForce(firstX)
-    # closest right
-    closeR = bruteForce(secondX)
+    return firstX,secondX
     
-    # closest distance by d
-    d = 0
+def closestPair(lx,ly,rx,ry):
 
-    if closeL < closeR:
-        d = closeL
-    else:
-        d = closeR
 
-    # closest cross
-    return closest_cross(firstX,secondX,d)
-
-# cross closest
-def closest_cross(firstX,secondX,delta):
-    
-    #left of delta
-    leftD =[]
-
-    i = len(firstX)
-
-    #reversed loop
-    while(True):
-        if a[i][0] > -delta:
-            leftD.append(a[i])
-            i-=1
-        else:
-            break
-    
-    #right of delta
-    rightD = []
-    i = len(secondX)
-    while(True):
-        if a[i][0] < delta:
-            rightD.append(a[i])
-            i+=1
-        else:
-            break
-
-    #sort deltas by y cordinate
-    sortY(leftD)
-    sortY(rightD)
-
-    #print("left d: ",leftD)
-    #print("right d:",rightD)
-
-    # find closest cross
-    #
-    #
-    #
-
-def bruteForce(a):
-
-    firstP = 0
-    secondP = 0
-
-    # nothing is over 11 in size
-    closest = 20
-    for i in range(len(a)-1):
-        for j in range(i+1,len(a)):
-            first = a[i]
-            firstX = first[0]
-            firstY = first[1]
-
-            second = a[j]
-            secondX = second[0]
-            secondY = second[1]
-
-            check = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
-            #print(check)
-            if check < closest:
-                closest = check
-                #print("distance",closest)
-                firstP = first
-                secondP = second
-            #print(closest) 
-    return closest
 
 a = make_list_points()
 
