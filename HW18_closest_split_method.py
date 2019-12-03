@@ -55,9 +55,9 @@ def closest_point(a):
         else:
             break
 
-    firstX=a[:middleI]
+    firstX=a[:middleI+1]
     print("\nleft side\n",firstX)
-    secondX=a[middleI:]
+    secondX=a[middleI+1:]
     print("\nright side\n",secondX)
 
     # closest left
