@@ -24,6 +24,6 @@ def RSelect(arr,l,r,k):
 n=1000
 a=[]
 for i in range(n):
-    a.append.(i)
+    a.append(i)
 t1= time.time()
 RSelect(a,0,n-1,n//2)
