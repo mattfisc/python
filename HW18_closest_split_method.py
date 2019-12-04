@@ -37,62 +37,34 @@ def make_list_points():
 
     return a
 
-
-
-
-def distance(first,second):
-
-    # max distance rough
-    delta = 30
-    closestPair = []
-
-    for i in range(len(a)-1):
-        for j in range(i+1,len(a)):
-
-            firstX = first[0]
-            firstY = first[1]
-
-            secondX = second[0]
-            secondY = second[1]
-
-            check = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
-
-            if check < delta:
-                # new closest pair
-                closestPair = [] # erase old
-
-                # add new pair
-                closestPair.append(first) 
-                closestPair.append(second)
-                delta = check
-
-                print("distance",delta)
-    return delta
-def closestPair(px1,px2,py1,py2):
+def closestPair(px,py):
     
-    lx = px1[:len(px1)//2]
-    rx = px1[len(px2)//2:]
-    ly = py1[:len(py1)//2]
-    ry = py2[len(py1)//2]
+    lx = px[:len(px)//2]
+    rx = px[len(px)//2:]
 
-    #median is the largest left side
-    median = lx[-1]
+    ly = py[:len(py)//2]
+    ry = py[len(py)//2:]
 
+    
     #base case if less than 3
-    if lx < 3:
-        return lx[0],lx[1]
-    elif ly < 3:
-        return ly[0], ly[1]
-    elif rx < 3:
-        return rx[0],rx[1]
-    elif ry < 3:
-        return ry[0],ry[1]
+    if len(px) <= 3:
+        #brute force compare
+        distance = distance(px[0],px[1])
+        sD = distance(px[1],px[2])
 
+        #return closest pair and distance
+        if distance > sD:
+            #second pair
+            return px[1],px[2],sD
+        #first pair
+        return px[0],px[1],distance
+
+        
     # all other cases
     else:
-        bestL = closestPair(lx,ly)
-        bestR = closestPair(rx,ry)
-        bestS = closestSplitPair(px,py)
+        bestL,dl = closestPair(lx,ly)
+        bestR,dr = closestPair(rx,ry)
+        bestS,ds = closestSplitPair(px,py)
         
 def closestSplitPair(lx,ly,rx,ry):
     sy = ly + ry
@@ -115,6 +87,20 @@ def closestSplitPair(lx,ly,rx,ry):
                 bestPair.append(q[i+j])
     return bestPair
 
+# distance of two tuples
+def distance(first,second):
+
+    firstX = first[0]
+    firstY = first[1]
+
+    secondX = second[0]
+    secondY = second[1]
+
+    check = math.sqrt((secondY - firstY)**2 + (secondX - secondY)**2)
+
+    
+    return check
+
 
 # make list of points
 a = make_list_points()
@@ -126,7 +112,7 @@ px = a.sort
 py = sortY(a)
 
 # find closest point
-best = closestPair(px,px,py,py)
+best = closestPair(px,py)
 
 #print("Non sorted list: \n",a)
 
