@@ -64,7 +64,11 @@ def closestPair(px,py):
     else:
         bestL,dl = closestPair(lx,ly)
         bestR,dr = closestPair(rx,ry)
-        bestS,ds = closestSplitPair(px,py)
+        if dl < dr:
+            delta = dl
+        else:
+            delta = dr
+        bestS,ds = closestSplitPair(px,py,delta)
         
 def closestSplitPair(lx,ly,rx,ry):
     sy = ly + ry
