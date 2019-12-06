@@ -14,6 +14,7 @@ def partition(A):
         if A[j] < pivot:
             A[j], A[i] = A[i], A[j]
             i += 1
+            j = i+1
     A[0], A[i-1] = A[i-1], A[0]
     print("A after: ",A)
     return i-1
@@ -43,6 +44,7 @@ def random_pivot(A):
     print("random index: ",rpivot)
     return rpivot                        
 
-a = [5,2,4,10,6,8,7,1,9,3,11]
 
+
+a = [5,2,4,10,6,8,7,1,9,3,11]
 print(quicksort(a))
