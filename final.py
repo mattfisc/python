@@ -7,25 +7,21 @@ count = 0
 
 def partition(A):
     pivot = A[0]  # the pivot value
-    i = 1      # We assume the pivot has been moved to the front of the
-    # array-This is done in the quicksort method
+    
+    i = 1
     print("A before: ",A)
-    for j in range(1,len(A)):
+    for j in range(i,len(A)):
         if A[j] < pivot:
             A[j], A[i] = A[i], A[j]
             i += 1
     A[0], A[i-1] = A[i-1], A[0]
     print("A after: ",A)
-
     return i-1
 
 def quicksort(A):
     if len(A) <= 1:
         return
-    global count
-    count += 1
-    print("count: ",count)
-
+    
     i = random_pivot(A)  # random pivot index
 
     # move pivot to the front of array
@@ -43,7 +39,7 @@ def quicksort(A):
 
 def random_pivot(A):
     # Randomly pick a value from (l , r)
-    rpivot = int((len(A))*random.random()) + 0
+    rpivot = int((len(A))*random.random())
     print("random index: ",rpivot)
     return rpivot                        
 
