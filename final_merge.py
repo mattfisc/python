@@ -2,6 +2,9 @@ import time
 import random
 import math
 
+
+count = 0
+
 def partition(A, l, r):
     pivot = A[l]  # the pivot value
     i = l+1       # We assume the pivot has been moved to the front of the
@@ -18,17 +21,24 @@ def partition(A, l, r):
 def quicksort(A, l, r):
     if l >= r:
         return
+    global count
+    count += 1
+    i = random_pivot(A, l, r)  # Chooses a pivot randomly from l to r
 
-    i = choose_pivot(A, l, r)  # Chooses a pivot randomly from l to r
-    # Moves the random pivot to the beginning of the array
+    # move pivot to the front of array
     A[l], A[i] = A[i], A[l]
-    j = partition(A, l, r)   # Then do the paretitioning
+    j = partition(A, l, r)   # partition left and right sides of pivot
 
     quicksort(A, l, j)      # 2 recursive calls- this one from l to j-1
     quicksort(A, j+1, r)    # This one from j+1 to the end of the array
 
-def choose_pivot(A, l, r):
+    return A
+
+
+def random_pivot(A, l, r):
     # Randomly pick a value from (l , r)
     rpivot = int((r-l)*random.random()) + l
-    return rpivot                        # This is our random pivot
+    return rpivot                        
 
+a = [5,2,4,15,6,8,7,1,9,11,]
+print(quicksort(a,0,len(a)))
