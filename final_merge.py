@@ -1,5 +1,6 @@
-
+import time
 import random
+import math
 
 def partition(A, l, r):
     pivot = A[l]  # the pivot value
