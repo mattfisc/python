@@ -10,14 +10,14 @@ def partition(A, l, r):
     i = l+1       # We assume the pivot has been moved to the front of the
     # array-This is done in the quicksort method
     
-    parTime = time.time()
+    
     for j in range(l+1, r):
         if A[j] < pivot:
             A[j], A[i] = A[i], A[j]
             i += 1
     A[l], A[i-1] = A[i-1], A[l]
     
-    print(time.time()-parTime)
+    
     
 
     return i-1
@@ -50,7 +50,7 @@ def random_pivot(A, l, r):
 # make random arr
 def make_array():
     arr = []
-    for i in range(10000):
+    for i in range(100):
         arr.append(random.randint(0,100))
     return arr
 
@@ -59,6 +59,7 @@ a = make_array()
 
 st = time.time()
 print(quicksort(a,0,len(a)))
+print("total time",time.time()-st)
+
 print("Array length", len(a))
-print(time.time()-st)
 print("count: ",count)
