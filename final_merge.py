@@ -50,7 +50,7 @@ def random_pivot(A, l, r):
 # make random arr
 def make_array():
     arr = []
-    for i in range(100):
+    for i in range(10000):
         arr.append(random.randint(0,100))
     return arr
 
