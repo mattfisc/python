@@ -29,7 +29,7 @@ def quicksort(A, l, r):
     count += 1
     
     i = random_pivot(A, l, r)  # Chooses a pivot randomly from l to r
-
+    
     # move pivot to the front of array
     A[l], A[i] = A[i], A[l]
     j = partition(A, l, r)   # partition left and right sides of pivot
@@ -50,8 +50,8 @@ def random_pivot(A, l, r):
 # make random arr
 def make_array():
     arr = []
-    for i in range(10000):
-        arr.append(random.randint(0,100))
+    for i in range(1000):
+        arr.append(random.randint(0,1000))
     return arr
 
 
