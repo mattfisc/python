@@ -45,21 +45,29 @@ def quicksort(A, l, r):
 def random_pivot(A, l, r):
     # Randomly pick a value from (l , r)
     rpivot = int((r-l)*random.random()) + l
-    return rpivot                        
+    return (l+1)                     
 
 # make random arr
-def make_array():
+def make_array1():
     arr = []
     for i in range(1000):
-        arr.append(random.randint(0,1000))
+        arr.append(random.randint(0,100))
+    return arr
+    
+# make random arr
+def make_array():# array in order
+    arr = []
+    for i in range(1000):
+        arr.append(i)
     return arr
 
 
 a = make_array()
 
-st = time.time()
-print(quicksort(a,0,len(a)))
-print("total time",time.time()-st)
-
 print("Array length", len(a))
-print("count: ",count)
+st = time.time()#start time
+quicksort(a,0,len(a))
+print("total time",time.time()-st)#end time
+
+
+print("Recursive count: ",count)
