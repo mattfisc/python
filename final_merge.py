@@ -20,7 +20,8 @@ def partition(A, l, r):
 def quicksort(A, l, r):
     if l >= r:
         return
-
+    global count
+    count += 1
     i = choose_pivot(A, l, r)  # Chooses a pivot randomly from l to r
     # Moves the random pivot to the beginning of the array
     A[l], A[i] = A[i], A[l]
@@ -30,9 +31,10 @@ def quicksort(A, l, r):
     quicksort(A, j+1, r)    # This one from j+1 to the end of the array
 
 def choose_pivot(A, l, r):
-    # Randomly pick a value from (l , r)
+    # Randomly pick a value from (l , r)# from begining to end
     rpivot = int((r-l)*random.random()) + l
-    return rpivot                        # This is our random pivot
+    #return rpivot                        # This is our random pivot
+    return l-1
                     
 
 # make random arr
@@ -45,7 +47,7 @@ def make_array1():
 # make random arr
 def make_array():# array in order
     arr = []
-    for i in range(1000):
+    for i in range(700):
         arr.append(i)
     return arr
 
