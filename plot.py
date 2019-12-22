@@ -4,6 +4,7 @@ import math
 import decimal
 import operator
 
+# not working
 # distance check from center
 def distance(a,r):
     #point
