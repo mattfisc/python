@@ -1,3 +1,4 @@
-obj = new make(10)
-
-print(obj)
+class Obj:
+    x = 12
+mine = Obj()
+print(mine.x)
